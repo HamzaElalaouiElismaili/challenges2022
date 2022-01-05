@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:challenges2022/Modules/MainPage/mainpage.dart';
+import 'package:challenges2022/Modules/OnBoarding/onboarding.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +23,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   startTime() async
   {
-    var duration = const Duration(seconds: 5);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, startNextScreen);
   }
 
-  startNextScreen() => goToReplace(context,const HomeScreen());
+  startNextScreen() => goToReplace(context,const OnBoarding());
 
 
   @override
