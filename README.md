@@ -1,16 +1,5 @@
 # challenges2022
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+day 1 => Splash Screen 01/04/2022
+day 2 => Onboarding Screen 01/05/2022
+day 3 => CashLocal with Shared_Preferences 01/06/2022
