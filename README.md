@@ -1,10 +1,10 @@
-# challenges2022
 
 
 - [my Linkedin](https://www.linkedin.com/in/hamza-el-alaoui-el-ismaili-85536a15a/)
 - [my Twitter](https://twitter.com/hamzaalaouielis)
 - [my Facebook](https://m.facebook.com/hamza.alawi.1671/)
-- [my Email] =>  hamzaelalaouielismaili@gmail.com
+- [my E-mail] =>  hamzaelalaouielismaili@gmail.com
+
 
 
 day 1 => Splash Screen 01/04/2022
