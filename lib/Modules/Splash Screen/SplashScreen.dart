@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:challenges2022/Modules/MainPage/mainpage.dart';
 import 'package:challenges2022/Modules/OnBoarding/onboarding.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
@@ -27,7 +28,16 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(duration, startNextScreen);
   }
 
-  startNextScreen() => goToReplace(context,const OnBoarding());
+  startNextScreen()
+  {
+
+    if (OnboardingValue == false)
+    {
+      goToReplace(context, const OnBoarding());
+    } else {
+      goToReplace(context, const HomeScreen());
+    }
+  }
 
 
   @override

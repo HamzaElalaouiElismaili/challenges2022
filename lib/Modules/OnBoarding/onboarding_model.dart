@@ -1,4 +1,5 @@
 import 'package:challenges2022/Modules/MainPage/mainpage.dart';
+import 'package:challenges2022/Modules/Network/local.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,11 @@ int currentPage  = 0 ;
 void submit(context)
 {
 
-  goToReplace(context, const HomeScreen());
+  CashLocal.saveData(key: 'onboarding', value: true).then((value)
+  {
+    if (value)  goToReplace(context, const HomeScreen());
+  });
+
 
 }
 
