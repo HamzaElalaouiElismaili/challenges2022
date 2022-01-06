@@ -1,5 +1,6 @@
 import 'package:challenges2022/Modules/MainPage/mainpage.dart';
-import 'package:challenges2022/Modules/Network/local.dart';
+import 'package:challenges2022/Modules/login_screen/login_screen_ui.dart';
+import 'package:challenges2022/Network/local.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ void submit(context)
 
   CashLocal.saveData(key: 'onboarding', value: true).then((value)
   {
-    if (value)  goToReplace(context, const HomeScreen());
+    if (value)  goToReplace(context,  LoginPage());
   });
 
 

@@ -1,13 +1,14 @@
-import 'package:challenges2022/Modules/Network/local.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Modules/Splash Screen/SplashScreen.dart';
+import 'Network/local.dart';
 
 void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await CashLocal.init();
+
 
   if (CashLocal.getData(key: 'onboarding') == null) CashLocal.saveData(key: 'onboarding', value: false);
   OnboardingValue = CashLocal.getData(key: 'onboarding');
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Challenges 2022',
       theme: ThemeData(
         fontFamily: "Cairo",
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.indigo,
       ),
       home: const SplashScreen(),
     );
