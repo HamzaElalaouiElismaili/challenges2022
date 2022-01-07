@@ -108,7 +108,38 @@ class LoginPage extends StatelessWidget {
                                       }
                                     },
                                     styleButton: loginButtonStyle),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 25),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: loginWithXButton(
+                                    styleButton: loginWithXButtonStyle,
+                                    textButton: "Google",
+                                    functionPressing: () {},
+                                    pathAsses: logoGoogle,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: loginWithXButton(
+                                    styleButton: loginWithXButtonStyle,
+                                    textButton: "Apple",
+                                    functionPressing: () {},
+                                    pathAsses: logoAppel,
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            const SizedBox(height: 60.0),
+                            const Divider(
+                              color: Colors.black,
+                              height: 2,
+                            ),
+                            const SizedBox(height: 20),
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -121,12 +152,7 @@ class LoginPage extends StatelessWidget {
                                   ),
                                 ),
                                 TextButton(
-                                    onPressed: () {
-                                      goTo(
-                                        context,
-                                        const Scaffold(),
-                                      );
-                                    },
+                                    onPressed: () => goTo(context, const Scaffold(),),
                                     child: const Text(
                                       'Sign up ',
                                       style: TextStyle(
@@ -136,27 +162,7 @@ class LoginPage extends StatelessWidget {
                                     )),
                               ],
                             ),
-                            const SizedBox(height: 35.0),
-                            const Divider(
-                              color: Colors.black,
-                              height: 2,
-                            ),
-                            const SizedBox(height: 30),
-                            loginWithXButton(
-                              styleButton: loginWithXButtonStyle,
-                              textButton: "login With Google",
-                              functionPressing: () {},
-                              pathAsses: logoGoogle,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            loginWithXButton(
-                              styleButton: loginWithXButtonStyle,
-                              textButton: "login With Apple",
-                              functionPressing: () {},
-                              pathAsses: logoAppel,
-                            )
+
                           ],
                         ),
                       ),

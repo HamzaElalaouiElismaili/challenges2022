@@ -8,7 +8,7 @@ final ButtonStyle onBoardingButtonStyle = ElevatedButton.styleFrom(
 final ButtonStyle loginButtonStyle = ButtonStyle(
   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
     RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.circular(15.0),
       side: const BorderSide(
         color: Colors.indigoAccent,
         width: 1.0,
@@ -18,10 +18,11 @@ final ButtonStyle loginButtonStyle = ButtonStyle(
   backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
 );
 
+
 final ButtonStyle loginWithXButtonStyle = ButtonStyle(
   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
     RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.circular(15.0),
       side: const BorderSide(
         color: Colors.indigoAccent,
         width: 1.0,
