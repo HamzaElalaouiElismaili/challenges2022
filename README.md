@@ -7,11 +7,12 @@
 
 
 
-day 1 => Splash Screen 01/04/2022
+day 1 => Splash Screen 04/01/2022
 
-day 2 => Onboarding Screen 01/05/2022
+day 2 => Onboarding Screen 05/01/2022
 
-day 3 => CashLocal with Shared_Preferences 01/06/2022
+day 3 => CashLocal with Shared_Preferences 06/01/2022
 
-day 4 => Login UI 01/07/2022
+day 4 => Login UI 07/01/2022
 
+day 5 => Localization 08/01/2022
