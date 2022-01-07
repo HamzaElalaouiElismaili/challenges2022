@@ -26,11 +26,5 @@ class LogInCubit extends Cubit<LoginStates> {
 
   }
 
-  alertDialogFunction(context) {
-    Navigator.of(context).pop();
-  }
 
-  void getMyInfo(String uid)
-  {
-  }
 }
