@@ -1,0 +1,23 @@
+
+{
+
+  "login" :"login" ,
+  "signInNow" :"Sign in now" ,
+  "email" :"EMAIL ADDRESS" ,
+  "password" :"PASSWORD" ,
+  "noAccount" :"Don't have an account ? ",
+  "signup" :"Sign up",
+  "skip": "skip",
+  "next" : "Next",
+  "title1" : "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  "subtitle1" : "Lorem Ipsum 1",
+  "title2" : "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  "subtitle2" : "Lorem Ipsum 2",
+  "title3" : "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  "subtitle3" : "Lorem Ipsum 3"
+
+
+
+
+
+}

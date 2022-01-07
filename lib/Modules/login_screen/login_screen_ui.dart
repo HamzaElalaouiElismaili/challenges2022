@@ -1,3 +1,4 @@
+import 'package:challenges2022/Localization/localization.dart';
 import 'package:challenges2022/Modules/MainPage/mainpage.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
@@ -46,10 +47,10 @@ class LoginPage extends StatelessWidget {
                                 width: 100,
                                 height: 100,
                                 child: Image.asset(logoMoroccoNow)),
-                            const Text(
-                              'Sign in to continue',
+                             Text(
+                              '${getLang(context , "signInNow")}',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 30),
+                                 const TextStyle(color: Colors.black, fontSize: 30),
                             ),
                             const SizedBox(height: 30),
                             myFormField(
@@ -63,7 +64,7 @@ class LoginPage extends StatelessWidget {
                               },
                               type: TextInputType.emailAddress,
                               suffixIcon: Icons.email_outlined,
-                              hintText: 'EMAIL ADDRESS',
+                              hintText: '${getLang(context , "email")}',
                             ),
                             const SizedBox(height: 10),
                             myFormField(
@@ -88,7 +89,7 @@ class LoginPage extends StatelessWidget {
                               },
                               type: TextInputType.text,
                               isPass: LogInCubit.get(context).isPassword,
-                              hintText: 'PASSWORD',
+                              hintText: '${getLang(context , "password")}',
                               suffixIcon: LogInCubit.get(context).suffix,
                             ),
                             const SizedBox(height: 25),
@@ -96,7 +97,7 @@ class LoginPage extends StatelessWidget {
                                 ? const Center(
                                     child: CircularProgressIndicator())
                                 : loginButton(
-                                    textButton: "login",
+                                    textButton: "${getLang(context , "login")}",
                                     functionPressing: () {
                                       if (formKey.currentState?.validate() !=
                                           null) {
@@ -143,9 +144,9 @@ class LoginPage extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text(
-                                  'Don\'t have an account?',
-                                  style: TextStyle(
+                                 Text(
+                                  '${getLang(context , "noAccount")}',
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     height: 1,
                                     fontWeight: FontWeight.bold,
@@ -153,9 +154,9 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 TextButton(
                                     onPressed: () => goTo(context, const Scaffold(),),
-                                    child: const Text(
-                                      'Sign up ',
-                                      style: TextStyle(
+                                    child:  Text(
+                                      '${getLang(context , "signup")}' ,
+                                      style: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           height: 1),

@@ -7,3 +7,4 @@ const String logoGoogle = "assets/images/google.png";
 const String logoAppel = "assets/images/apple.png";
 
 bool? OnboardingValue;
+bool? languageSelected;

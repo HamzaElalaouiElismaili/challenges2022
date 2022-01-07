@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:challenges2022/Modules/MainPage/mainpage.dart';
+import 'package:challenges2022/Localization/choosing_lang_ui.dart';
 import 'package:challenges2022/Modules/OnBoarding/onboarding.dart';
 import 'package:challenges2022/Modules/login_screen/login_screen_ui.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
@@ -31,14 +31,23 @@ class _SplashScreenState extends State<SplashScreen> {
 
   startNextScreen()
   {
-    if (OnboardingValue == false)
-    {
-      goToReplace(context, const OnBoarding());
-    } else {
-      goToReplace(context,  LoginPage());
-    }
-  }
 
+
+    if (languageSelected == false )
+    {
+      goToReplace(context, const ChoosingLangUI());
+    }
+     else if (OnboardingValue == false)
+      {
+        goToReplace(context, const OnBoarding());
+      }
+     else
+       {
+         goToReplace(context,  LoginPage());
+       }
+
+
+  }
 
   @override
   Widget build(BuildContext context) {

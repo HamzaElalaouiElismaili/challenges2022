@@ -23,10 +23,10 @@ class LogInCubit extends Cubit<LoginStates> {
   {
     emit(LoginLoadingState());
     emit(LoginSucsessState(""));
-
   }
 
-  alertDialogFunction(context) {
+  alertDialogFunction(context)
+  {
     Navigator.of(context).pop();
   }
 

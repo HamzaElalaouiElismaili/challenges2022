@@ -1,3 +1,4 @@
+import 'package:challenges2022/Localization/localization.dart';
 import 'package:challenges2022/shared/Component/onboardingWidgets/onboardingWidgets.dart';
 import 'package:challenges2022/shared/Styles/styles.dart';
 import 'package:flutter/material.dart';
@@ -21,21 +22,21 @@ class _OnBoardingState extends State<OnBoarding> {
             children: [
               const SizedBox(height: 7),
               Padding(
-                padding: const EdgeInsets.only(right: 10.0),
+                padding: const EdgeInsets.only(right: 10.0, left: 10),
                 child: Container(
-                    height: 38,
-                    width: 70,
+                    height: 45,
+                    width: 80,
                     decoration: const BoxDecoration(
                       color: Colors.indigoAccent,
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                     ),
                     child: TextButton(
                         onPressed: () => submit(context),
-                        child: const Padding(
-                          padding: EdgeInsets.all(5.0),
+                        child:  Padding(
+                          padding:const EdgeInsets.all(5.0),
                           child: Text(
-                            'SKIP',
-                            style: TextStyle(color: Colors.white, height: 1),
+                            "${getLang(context , "skip")}",
+                            style:const TextStyle(color: Colors.white, height: 1),
                           ),
                         ))),
               ),
@@ -97,13 +98,12 @@ class _OnBoardingState extends State<OnBoarding> {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children:  [
                               Text(
-                                "Next",
-                                style:
-                                    TextStyle(height: 1, color: Colors.white),
+                                "${getLang(context , "next")}",
+                                style:  const TextStyle(height: 1, color: Colors.white),
                               ),
-                              Icon(
+                             const  Icon(
                                 Icons.arrow_forward_ios,
                                 size: 16,
                                 color: Colors.white,

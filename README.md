@@ -16,3 +16,6 @@ day 3 => CashLocal with Shared_Preferences 06/01/2022
 day 4 => Login UI 07/01/2022
 
 day 5 => Localization 08/01/2022
+
+day 6 => Registration UI 10/01/2022
+

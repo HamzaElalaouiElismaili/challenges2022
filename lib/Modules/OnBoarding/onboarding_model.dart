@@ -1,4 +1,4 @@
-import 'package:challenges2022/Modules/MainPage/mainpage.dart';
+import 'package:challenges2022/Localization/choosing_lang_ui.dart';
 import 'package:challenges2022/Modules/login_screen/login_screen_ui.dart';
 import 'package:challenges2022/Network/local.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
@@ -20,7 +20,7 @@ class BoardingModel {
 bool isLastOnBoarding = false;
 PageController boarderController = PageController();
 
-int currentPage  = 0 ;
+int currentPage  = 0;
 
 
 void submit(context)
@@ -31,7 +31,6 @@ void submit(context)
     if (value)  goToReplace(context,  LoginPage());
   });
 
-
 }
 
 
@@ -39,7 +38,7 @@ List<BoardingModel> boarding = [
 //first
   BoardingModel(
       image: "assets/images/board1.png",
-      title: "Lorem Ipsum is simply dummy text of the printing and typesetting ",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
       body: "Lorem Ipsum 1"),
 
 //second
