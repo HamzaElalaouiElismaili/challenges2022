@@ -14,7 +14,13 @@
   "title2" : "Lorem Ipsum is simply dummy text of the printing and typesetting",
   "subtitle2" : "Lorem Ipsum 2",
   "title3" : "Lorem Ipsum is simply dummy text of the printing and typesetting",
-  "subtitle3" : "Lorem Ipsum 3"
+  "subtitle3" : "Lorem Ipsum 3",
+  "emptyFailed": "must be entered",
+  "signupNow": "Sign in now",
+  "Birthday": "Birthday",
+  "fullName":"Full Name",
+  "phone":"Phone"
+
 
 
 

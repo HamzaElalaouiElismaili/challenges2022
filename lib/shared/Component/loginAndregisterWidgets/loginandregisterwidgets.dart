@@ -14,8 +14,9 @@ Widget myFormField({
   bool isPass = false,
   Function? suffixpressed,
   bool isclickable = true,
-}) =>
-    SizedBox(
+}) {
+
+  return  SizedBox(
       child: TextFormField(
         obscureText: isPass ? true : false,
         controller: controller,
@@ -52,6 +53,7 @@ Widget myFormField({
         keyboardType: type,
       ),
     );
+}
 
 Widget loginButton(
     {required String textButton,
@@ -105,6 +107,30 @@ Widget loginWithXButton(
               ),
             ),
           ],
+        ),
+      ),
+      style: styleButton,
+      onPressed: functionPressing,
+    ),
+  );
+}
+
+
+
+Widget registerButton(
+    {required String textButton,
+      required Function() functionPressing,
+      required ButtonStyle styleButton}) {
+  return SizedBox(
+    height: 60,
+    width: double.maxFinite,
+    child: ElevatedButton(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 8.0),
+        child: Text(
+          textButton,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontFamily: "Cairo", fontSize: 25),
         ),
       ),
       style: styleButton,

@@ -1,5 +1,5 @@
 import 'package:challenges2022/Localization/localization.dart';
-import 'package:challenges2022/Modules/MainPage/mainpage.dart';
+import 'package:challenges2022/Modules/register_screen/register_screen_ui.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:challenges2022/shared/Component/loginAndregisterWidgets/loginandregisterwidgets.dart';
@@ -12,7 +12,7 @@ import 'login_cubit.dart';
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKeyLogin = GlobalKey<FormState>();
 
   LoginPage({Key? key}) : super(key: key);
 
@@ -25,8 +25,9 @@ class LoginPage extends StatelessWidget {
         child: BlocConsumer<LogInCubit, LoginStates>(
           listener: (context, state) {
             if (state is LoginErrorState) {}
-            if (state is LoginSucsessState) {
-              goToReplace(context, const HomeScreen());
+            if (state is LoginSucsessState)
+            {
+             // goToReplace(context, const HomeScreen());
             }
           },
           builder: (context, state) {
@@ -39,7 +40,7 @@ class LoginPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 30.0, left: 30),
                       child: Form(
-                        key: formKey,
+                        key: formKeyLogin,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -57,7 +58,7 @@ class LoginPage extends StatelessWidget {
                               controller: emailController,
                               validate: (String? value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'must be entered';
+                                  return "${getLang(context , "emptyFailed")}";
                                 } else {
                                   return null;
                                 }
@@ -73,7 +74,7 @@ class LoginPage extends StatelessWidget {
                                     .changePasswordVisibility();
                               },
                               onSubmit: (value) {
-                                if (formKey.currentState?.validate() != null) {
+                                if (formKeyLogin.currentState?.validate() != null) {
                                   LogInCubit.get(context).userLogin(
                                       email: emailController.text,
                                       password: passwordController.text);
@@ -82,7 +83,7 @@ class LoginPage extends StatelessWidget {
                               controller: passwordController,
                               validate: (String? value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'must be entered';
+                                  return "${getLang(context , "emptyFailed")}";
                                 } else {
                                   return null;
                                 }
@@ -98,13 +99,11 @@ class LoginPage extends StatelessWidget {
                                     child: CircularProgressIndicator())
                                 : loginButton(
                                     textButton: "${getLang(context , "login")}",
-                                    functionPressing: () {
-                                      if (formKey.currentState?.validate() !=
-                                          null) {
+                                    functionPressing: ()
+                                    {
+                                      if (formKeyLogin.currentState?.validate() != null) {
                                         LogInCubit.get(context).userLogin(
-                                            email: emailController.text
-                                                .trim()
-                                                .toLowerCase(),
+                                            email: emailController.text.trim().toLowerCase(),
                                             password: passwordController.text);
                                       }
                                     },
@@ -153,7 +152,7 @@ class LoginPage extends StatelessWidget {
                                   ),
                                 ),
                                 TextButton(
-                                    onPressed: () => goTo(context, const Scaffold(),),
+                                    onPressed: () => goTo(context,RegistrationPage(),),
                                     child:  Text(
                                       '${getLang(context , "signup")}' ,
                                       style: const TextStyle(

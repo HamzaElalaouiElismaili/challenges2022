@@ -8,3 +8,6 @@ const String logoAppel = "assets/images/apple.png";
 
 bool? OnboardingValue;
 bool? languageSelected;
+
+
+const double registerTopPadding = 9;
