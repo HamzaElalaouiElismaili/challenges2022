@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:challenges2022/Localization/choosing_lang_ui.dart';
+import 'package:challenges2022/Modules/MainPage/mainpage.dart';
 import 'package:challenges2022/Modules/OnBoarding/onboarding.dart';
 import 'package:challenges2022/Modules/login_screen/login_screen_ui.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:flutter/material.dart';
+
 
 class SplashScreen extends StatefulWidget{
   const SplashScreen({Key? key}) : super(key: key);
@@ -33,18 +35,27 @@ class _SplashScreenState extends State<SplashScreen> {
   {
 
 
-    if (languageSelected == false )
+    if(uId == "null")
     {
-      goToReplace(context, const ChoosingLangUI());
-    }
-     else if (OnboardingValue == false)
+      if (languageSelected == false )
+      {
+        goToReplace(context, const ChoosingLangUI());
+      }
+      else if (OnboardingValue == false)
       {
         goToReplace(context, const OnBoarding());
       }
-     else
-       {
-         goToReplace(context,  LoginPage());
-       }
+      else
+      {
+        goToReplace(context,  LoginPage());
+      }
+    }
+    if (uId != "null")
+    {
+      goToReplace(context,  HomeScreen());
+
+    }
+
 
 
   }
