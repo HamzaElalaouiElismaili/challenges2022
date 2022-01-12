@@ -1,5 +1,8 @@
 import 'package:challenges2022/Localization/localization.dart';
+import 'package:challenges2022/Modules/MainPage/mainpage.dart';
 import 'package:challenges2022/Modules/register_screen/register_screen_ui.dart';
+import 'package:challenges2022/Network/local.dart';
+import 'package:challenges2022/main.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:challenges2022/shared/Component/loginAndregisterWidgets/loginandregisterwidgets.dart';
@@ -19,15 +22,56 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
+        providers:
+        [
           BlocProvider(create: (BuildContext context) => LogInCubit()),
         ],
         child: BlocConsumer<LogInCubit, LoginStates>(
           listener: (context, state) {
-            if (state is LoginErrorState) {}
-            if (state is LoginSucsessState)
+            if (state is LoginErrorState)
             {
-             // goToReplace(context, const HomeScreen());
+              LogInCubit.get(context).isError = true;
+              if(state.error == errorPasswordWrong)
+             {
+               errorType ="${getLang(context , "passwordIncorrect")}";
+             }
+             else if(state.error == errorEmailFormat)
+             {
+               errorType ="${getLang(context , "notEmail")}";
+             }
+             else if(state.error == errorUserNotFound )
+             {
+               errorType ="${getLang(context , "notAccount")}";
+             }
+             else if(state.error == errorNetworkFailed)
+             {
+               errorType ="${getLang(context , "noNetwork")}";
+             }
+            else if(state.error == errorDataEmpty)
+             {
+               errorType ="${getLang(context , "noDataEntered")}";
+             }
+             else
+               {
+                 errorType ="${getLang(context , "TryAgain")}";
+               }
+            }
+            if (state is LoginSucsessState)
+              {
+                CashLocal.saveData(key: "uid", value: uId);
+                userModel.uId = CashLocal.getData(key: "uid");
+                goToReplace(context, const HomeScreen());
+              }
+            if( state is LoginWithGoogleSucsessState)
+            {
+              uId = state.uid;
+              CashLocal.saveData(key: "uid", value: state.uid);
+              goToReplace(context, const HomeScreen());
+            }
+            if (state is CreateUserWithGoogleSingInSuccessState)
+            {
+              CashLocal.saveData(key: "uid", value: state.uId);
+              goToReplace(context,  Scaffold( appBar:  AppBar( title:  const Text("Profile"),),));
             }
           },
           builder: (context, state) {
@@ -53,7 +97,14 @@ class LoginPage extends StatelessWidget {
                               style:
                                  const TextStyle(color: Colors.black, fontSize: 30),
                             ),
-                            const SizedBox(height: 30),
+
+
+                            LogInCubit.get(context).isError ?
+                            errorBar(context: context,errorType: errorType,onTap: ()
+                            {
+                              LogInCubit.get(context).removeErrorBar();
+                            }): const SizedBox(height: 20,),
+
                             myFormField(
                               controller: emailController,
                               validate: (String? value) {
@@ -69,7 +120,7 @@ class LoginPage extends StatelessWidget {
                             ),
                             const SizedBox(height: 10),
                             myFormField(
-                              suffixpressed: () {
+                              suffixPressed: () {
                                 LogInCubit.get(context)
                                     .changePasswordVisibility();
                               },
@@ -111,17 +162,23 @@ class LoginPage extends StatelessWidget {
                             const SizedBox(height: 25),
                             Row(
                               children: [
-                                Expanded(
-                                  child: loginWithXButton(
+                                state is LoginWithGoogleLoadingState
+                                    ? const  CircularProgressIndicator()
+                                    : Expanded(
+                                      child: loginWithXButton(
                                     styleButton: loginWithXButtonStyle,
                                     textButton: "Google",
-                                    functionPressing: () {},
+                                    functionPressing: ()
+                                    {
+                                      LogInCubit.get(context).signInWithGoogle();
+                                    },
                                     pathAsses: logoGoogle,
                                   ),
                                 ),
                                 const SizedBox(
                                   width: 10,
                                 ),
+
                                 Expanded(
                                   child: loginWithXButton(
                                     styleButton: loginWithXButtonStyle,
@@ -132,13 +189,14 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 30,),
 
-                            const SizedBox(height: 60.0),
+                            const SizedBox(height: 5,),
                             const Divider(
                               color: Colors.black,
                               height: 2,
                             ),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 10,),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
