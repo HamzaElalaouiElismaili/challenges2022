@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
        curve: Curves.easeInCirc,
        top: isDrawer ? 0: 0.1* height!,
        bottom:  isDrawer ? 0: 0.17* width!,
-       left:  isDrawer ? 0: 0.12* width!,// left:  isDrawer ? 0: 0.12* width!,
+       left:  isDrawer ? 0: 0.12* width!,// this for drawer2  left:  isDrawer ? 0: 0.12* width!,
        right: isDrawer ? 0: -0.6* width!,
 
        child: Container(

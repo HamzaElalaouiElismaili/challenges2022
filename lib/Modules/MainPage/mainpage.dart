@@ -1,6 +1,3 @@
-import 'package:challenges2022/shared/Component/HomeScreenWidgets/homescreenwidgets.dart';
-import 'package:challenges2022/shared/Component/constent/constent.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Drawer/drawer.dart';
@@ -25,12 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return  Scaffold(
       body: SafeArea(
         child: Stack(
-          children:  [
-           // test1(context),
-           // test2(context),
-            Container(color: Colors.indigo[100],),
-            DrawerPage(),
-            HomePage()
+          children:
+          [
+          Container(color: Colors.indigo[100],),
+          // const DrawerPage2(),
+          const  DrawerPage(),
+          const  HomePage()
 
           ],
         ),

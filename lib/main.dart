@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget
                 fontFamily: "Cairo",
                 primarySwatch: Colors.indigo,
               ),
-              home: const HomeScreen(),
+              home: const SplashScreen(),
               localizationsDelegates: const [
                 AppLocale.delegate,
                 GlobalMaterialLocalizations.delegate,
