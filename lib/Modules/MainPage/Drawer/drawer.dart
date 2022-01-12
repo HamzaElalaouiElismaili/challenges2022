@@ -52,7 +52,6 @@ class _DrawerPageState extends State<DrawerPage> {
               Expanded(child: drawerNavigation(iconData: Icons.message, colorText: Colors.black, text: "Messages", backgroundColor: Colors.transparent,)),
               Expanded(child: drawerNavigation(iconData: Icons.today_outlined, colorText: Colors.black, text: "Calendar", backgroundColor: Colors.transparent,)),
               Expanded(child: drawerNavigation(iconData: Icons.lock, colorText: Colors.black, text: "Privacy", backgroundColor: Colors.transparent,)),
-
               const Spacer(),
               const ListTile(
                 leading:  Icon(Icons.logout),
