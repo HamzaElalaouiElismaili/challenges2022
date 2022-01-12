@@ -19,11 +19,13 @@
   "signupNow": "Sign in now",
   "Birthday": "Birthday",
   "fullName":"Full Name",
-  "phone":"Phone"
-
-
-
-
-
+  "phone":"Phone",
+  "passwordIncorrect": "Password Incorrect",
+  "notEmail": "Please Entre  Email",
+  "notAccount": "No Account",
+  "noNetwork": "No Network",
+  "noDataEntered": "Please Enter Data",
+  "TryAgain": "Error Please Try Again",
+  "emailExist": "This Email Already use it"
 
 }

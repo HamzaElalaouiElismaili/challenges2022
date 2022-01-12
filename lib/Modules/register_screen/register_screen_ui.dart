@@ -1,6 +1,8 @@
 import 'package:challenges2022/Localization/localization.dart';
+import 'package:challenges2022/Modules/login_screen/login_screen_ui.dart';
 import 'package:challenges2022/Modules/register_screen/register_cubit.dart';
 import 'package:challenges2022/Modules/register_screen/register_states.dart';
+import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:challenges2022/shared/Component/loginAndregisterWidgets/loginandregisterwidgets.dart';
 import 'package:challenges2022/shared/Styles/styles.dart';
@@ -27,7 +29,42 @@ class RegistrationPage extends StatelessWidget {
     return BlocProvider(
         create: (BuildContext context) => RegisterCubit(),
         child: BlocConsumer<RegisterCubit, RegisterStates>(
-            listener: (context, state) {},
+            listener: (context, state)
+            {
+              if (state is RegisterErrorState)
+              {
+                RegisterCubit.get(context).isError = true;
+                if(state.error == errorPasswordWrong)
+                {
+                  errorType ="${getLang(context , "passwordIncorrect")}";
+                }
+                else if(state.error == errorEmailFormat)
+                {
+                  errorType ="${getLang(context , "notEmail")}";
+                }
+                else if(state.error == errorUserNotFound )
+                {
+                  errorType ="${getLang(context , "notAccount")}";
+                }
+                else if(state.error == errorNetworkFailed)
+                {
+                  errorType ="${getLang(context , "noNetwork")}";
+                }
+                else if(state.error == errorDataEmpty)
+                {
+                  errorType ="${getLang(context , "noDataEntered")}";
+                }
+                else if(state.error == errorEmailUsed)
+                {
+                  errorType ="${getLang(context , "emailExist")}";
+                }
+                else
+                {
+                  errorType = "Error Try Again";
+                }
+              }
+              if (state is CreateUserSuccessState)  goTo(context, LoginPage());
+            },
             builder: (context, state) {
               return Scaffold(
                 backgroundColor: Colors.white,
@@ -48,8 +85,16 @@ class RegistrationPage extends StatelessWidget {
                               Text(
                                 '${getLang(context , "signupNow")}',
                                 style:
-                                const TextStyle(color: Colors.black, fontSize: 30),
-                              ),
+                                const TextStyle(color: Colors.black, fontSize: 30),),
+
+
+                              RegisterCubit.get(context).isError ?
+                              errorBar(context: context,errorType: errorType,onTap: ()
+                              {
+                                debugPrint("remove it");
+                                RegisterCubit.get(context).removeErrorBar();
+                              }): const SizedBox(height: 20,),
+
                               Padding(
                                 padding: const EdgeInsets.only(top: registerTopPadding),
                                 child: myFormField(
@@ -131,7 +176,7 @@ class RegistrationPage extends StatelessWidget {
                                     hintText: "${getLang(context , "password")}",
                                     isPass: RegisterCubit.get(context).isPassword,
                                     suffixIcon: RegisterCubit.get(context).suffix,
-                                    suffixpressed: () {
+                                    suffixPressed: () {
                                       RegisterCubit.get(context)
                                           .changePasswordVisibility();
                                     }),
@@ -148,7 +193,7 @@ class RegistrationPage extends StatelessWidget {
                                         email: registerEmailController.text.trim().toLowerCase(),
                                         phone: registerPhoneController.text.trim(),
                                         password: registerPasswordController.text,
-                                        fullName: registerFullNameController.text.trim().toLowerCase(),
+                                        fullname: registerFullNameController.text.trim().toLowerCase(),
                                         birthday: registerDateController.text.trim());
                                   }
                                 },styleButton:  registerButtonStyle),

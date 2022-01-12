@@ -8,7 +8,6 @@ class  AppLocale {
 
   Locale? locale ;
 
-
   Map<String , String>? _loadedLocalizedValues ;
 
   AppLocale(this.locale) ;
@@ -52,6 +51,4 @@ class  _AppLocalDelegate extends LocalizationsDelegate<AppLocale> {
 }
 
 
-getLang(BuildContext context  , String key) {
-  return AppLocale.of(context).getTranslated(key) ;
-}
+getLang(BuildContext context  , String key) => AppLocale.of(context).getTranslated(key) ;

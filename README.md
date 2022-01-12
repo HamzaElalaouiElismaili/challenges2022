@@ -27,9 +27,10 @@ day 8 => Login Email And Password Firebase 12/01/2022
 
 day 9 => Login Google Account 13/01/2022
 
-day 10 => Profile UI 14/01/2022
+day 10 => Home Page  UI 14/01/2022
 
-day 11 => Update Data into Firebase 15/01/2022
+day 11 => Profile UI 15/01/2022
 
-day 13 => Home Page  UI 16/01/2022
+day 12 => Update Data into Firebase 16/01/2022
+
 
