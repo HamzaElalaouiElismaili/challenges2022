@@ -2,7 +2,6 @@ import 'package:challenges2022/Localization/localization.dart';
 import 'package:challenges2022/Modules/MainPage/mainpage.dart';
 import 'package:challenges2022/Modules/register_screen/register_screen_ui.dart';
 import 'package:challenges2022/Network/local.dart';
-import 'package:challenges2022/main.dart';
 import 'package:challenges2022/shared/Component/NavigationWidgets/NavigationWidget.dart';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 import 'package:challenges2022/shared/Component/loginAndregisterWidgets/loginandregisterwidgets.dart';
@@ -58,20 +57,22 @@ class LoginPage extends StatelessWidget {
             }
             if (state is LoginSucsessState)
               {
-                CashLocal.saveData(key: "uid", value: uId);
-                userModel.uId = CashLocal.getData(key: "uid");
+                LogInCubit.get(context).getMyInfo(state.uid);
+                CashLocal.saveData(key: "uid", value: state.uid);
                 goToReplace(context, const HomeScreen());
               }
             if( state is LoginWithGoogleSucsessState)
             {
               uId = state.uid;
+              LogInCubit.get(context).getMyInfo(state.uid);
               CashLocal.saveData(key: "uid", value: state.uid);
               goToReplace(context, const HomeScreen());
             }
             if (state is CreateUserWithGoogleSingInSuccessState)
             {
-              CashLocal.saveData(key: "uid", value: state.uId);
-              goToReplace(context,  Scaffold( appBar:  AppBar( title:  const Text("Profile"),),));
+              LogInCubit.get(context).getMyInfo(state.uid);
+              CashLocal.saveData(key: "uid", value: state.uid);
+              goToReplace(context, const  HomeScreen()) ;
             }
           },
           builder: (context, state) {

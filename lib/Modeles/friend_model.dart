@@ -1,22 +1,21 @@
+
+
 import 'dart:io';
 import 'package:challenges2022/shared/Component/constent/constent.dart';
 
-class UserModel {
+class FriendModel {
   String? fullname;
   String? email;
   String? phone;
   String? uId;
   bool? isEmailVerified = false;
   String? birthday;
-  String? password;
   String? address;
   String? profileImage ="";
   List? listFriends = [];
-  File? file = File(myImage!);
 
 
-  UserModel({this.address,
-    this.password,
+  FriendModel({this.address,
     this.fullname,
     this.birthday,
     this.email,
@@ -24,10 +23,9 @@ class UserModel {
     this.uId,
     this.isEmailVerified,
     this.profileImage,
-    this.listFriends,
-    this.file});
+    this.listFriends,});
 
-  UserModel.fromJson(Map<String, dynamic> json){
+  FriendModel.fromJson(Map<String, dynamic> json){
     fullname = json['fullname'];
     email = json['email'];
     phone = json['phone'];
@@ -56,4 +54,4 @@ class UserModel {
   }
 }
 
-UserModel userModel = UserModel();
+FriendModel friendModel = FriendModel();

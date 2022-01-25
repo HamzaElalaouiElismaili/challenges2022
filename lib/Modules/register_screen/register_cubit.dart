@@ -25,6 +25,8 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required String? email,
     required String? phone,
     required String? password,
+    required String? profileImage,
+    required List? listFriends
 
   })
   {
@@ -34,7 +36,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
     FirebaseAuth.instance.createUserWithEmailAndPassword(email: email!, password: password!,).then((value)
     {
       uId = value.user!.uid;
-      createUser(password: password,fullname: fullname, email: email, phone: phone, uId: value.user!.uid, birthday:birthday);
+      createUser(listFriends: listFriends,profileImage: profileImage,password: password,fullname: fullname, email: email, phone: phone, uId: value.user!.uid, birthday:birthday);
 
     }).catchError((error)
     {
@@ -51,7 +53,11 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required String? phone,
     required String? uId,
     required String? birthday,
-    required String? password
+    required String? password,
+    required String? profileImage,
+    required List? listFriends
+
+
 
   }) {
 
@@ -63,6 +69,8 @@ class RegisterCubit extends Cubit<RegisterStates> {
       phone: phone,
       uId: uId,
       birthday: birthday,
+      profileImage: profileImage,
+      listFriends: [],
       isEmailVerified : false,
     );
 

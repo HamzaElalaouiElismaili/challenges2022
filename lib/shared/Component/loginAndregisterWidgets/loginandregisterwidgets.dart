@@ -175,3 +175,49 @@ Widget errorBar({required BuildContext context, required String errorType, requi
     ),
   );
 }
+
+Widget updateProfileButton(
+    {required String textButton,
+      required Function() functionPressing,
+      required ButtonStyle styleButton}) {
+  return SizedBox(
+    height: 60,
+    width: double.maxFinite,
+    child: ElevatedButton(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 8.0),
+        child: Text(
+          textButton,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 25),
+        ),
+      ),
+      style: styleButton,
+      onPressed: functionPressing,
+    ),
+  );
+}
+
+
+
+Widget completeInfoButton(
+    {required String textButton,
+      required Function() functionPressing,
+      required ButtonStyle styleButton}) {
+  return SizedBox(
+    height: 60,
+    width: double.maxFinite,
+    child: ElevatedButton(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 8.0),
+        child: Text(
+          textButton,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 25),
+        ),
+      ),
+      style: styleButton,
+      onPressed: functionPressing,
+    ),
+  );
+}

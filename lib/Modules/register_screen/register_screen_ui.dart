@@ -190,6 +190,8 @@ class RegistrationPage extends StatelessWidget {
                                   if (formKeyRegister.currentState?.validate() != null)
                                   {
                                     RegisterCubit.get(context).register(
+                                        listFriends:  [],
+                                        profileImage: imageProfileDefault,
                                         email: registerEmailController.text.trim().toLowerCase(),
                                         phone: registerPhoneController.text.trim(),
                                         password: registerPasswordController.text,

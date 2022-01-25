@@ -77,3 +77,49 @@ final ButtonStyle registerButtonStyle = ButtonStyle(
   ),
   backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
 );
+
+
+
+final ButtonStyle completeInfoButtonStyle = ButtonStyle(
+  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+    RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15.0),
+      side: const BorderSide(
+        color: Colors.indigoAccent,
+        width: 1.0,
+      ),
+    ),
+  ),
+  backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
+);
+
+
+
+final ButtonStyle updateProfileButtonStyle = ButtonStyle(
+  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+    RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15.0),
+      side: const BorderSide(
+        color: Colors.indigoAccent,
+        width: 1.0,
+      ),
+    ),
+  ),
+  backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
+);
+
+
+
+
+final ButtonStyle alertDialogButtonStyle = ButtonStyle(
+  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+    RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(2.0),
+      side: const BorderSide(
+        color: Colors.indigoAccent,
+        width: 1.0,
+      ),
+    ),
+  ),
+  backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
+);

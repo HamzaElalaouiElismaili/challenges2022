@@ -38,6 +38,10 @@ class LogInCubit extends Cubit<LoginStates> {
     }).catchError((error)
     {
       emit(LoginErrorState(error.toString()));
+
+
+
+
       debugPrint(error.toString());
     });
   }
@@ -57,7 +61,6 @@ class LogInCubit extends Cubit<LoginStates> {
       FirebaseAuth.instance.signInWithCredential(credential).then((value)
     {
       User user = value.user!;
-
       FirebaseFirestore
           .instance
           .collection('users')
@@ -72,11 +75,13 @@ class LogInCubit extends Cubit<LoginStates> {
       }).catchError((error)
       {
         UserModel model = UserModel(
+          listFriends: [],
           address: "",
           fullname: user.displayName,
           email: user.email,
           phone: "",
           uId: user.uid,
+          profileImage: "",
           birthday: "example 09/05/1998",
           isEmailVerified : false,
         );
@@ -84,7 +89,10 @@ class LogInCubit extends Cubit<LoginStates> {
             .collection('users')
             .doc(user.uid)
             .set(model.toMap())
-            .then((value) {
+            .then((value)
+        {
+
+          getMyInfo(model.uId!);
           emit(CreateUserWithGoogleSingInSuccessState(model.uId!));
         }).catchError((error)
         {
@@ -97,8 +105,6 @@ class LogInCubit extends Cubit<LoginStates> {
 
   }
 
-
-
 bool isError= false;
 
 void removeErrorBar()
@@ -106,6 +112,23 @@ void removeErrorBar()
    isError= false;
    emit(RemoveErrorBarState());
 }
+
+
+  void getMyInfo(String uid) {
+    emit(GetMyInfoLoading());
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .get()
+        .then((value) {
+      userModel = UserModel.fromJson(value.data()!);
+      debugPrint(userModel.email);
+      emit(GetMyInfoSuccessfully(uid));
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(GetMyInfoError(error.toString()));
+    });
+  }
 
 
 }

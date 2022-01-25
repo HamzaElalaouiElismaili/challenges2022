@@ -28,14 +28,16 @@ class LoginWithGoogleSucsessState extends LoginStates {
 class LoginErrorState extends LoginStates {
   late final String error;
   LoginErrorState(this.error);
+
+
 }
 
 class LoginvisiblepassState extends LoginStates {}
 
 class CreateUserWithGoogleSingInSuccessState extends LoginStates
 {
-  late final String uId ;
-  CreateUserWithGoogleSingInSuccessState(this.uId);
+  late final String uid ;
+  CreateUserWithGoogleSingInSuccessState(this.uid);
 
 }
 
