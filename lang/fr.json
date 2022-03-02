@@ -26,6 +26,10 @@
   "noNetwork": "No Network",
   "noDataEntered": "Please Enter Data",
   "TryAgain": "Error Please Try Again",
-  "emailExist": "This Email Already use it"
+  "emailExist": "This Email Already use it",
+  "settings": "Settings",
+  "profilesetting": "Setting Profile",
+  "chooselangg": "lang"
+
 
 }
