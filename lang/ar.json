@@ -25,7 +25,11 @@
   "noNetwork": "تحقق من اتصالك بالأنترنت",
   "noDataEntered": "ادخل بياناتك ",
   "TryAgain": " هناك خطأ اعد المحاولة",
-  "emailExist": "هذا البريد مسجل مسبقا"
+  "emailExist": "هذا البريد مسجل مسبقا",
+  "settings": "اعدادات",
+  "profilesetting": "اعدادات الحساب الشخصي",
+  "chooselangg": "اختر لغة"
+
 
 
 

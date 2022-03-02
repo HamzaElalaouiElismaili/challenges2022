@@ -1,0 +1,17 @@
+  shared_preferences: ^2.0.11
+  flutter_bloc: ^8.0.1
+  bloc: ^8.0.2
+  cloud_firestore: ^3.1.6
+  firebase_core: ^1.11.0
+  firebase_auth: ^3.3.5
+  google_sign_in: ^5.2.1
+  image_picker: ^0.8.4+2
+  firebase_storage: ^10.2.5
+  jitsi_meet: ^4.0.0
+  flutter_barcode_scanner: ^2.0.0
+  barcode_widget: ^2.0.1
+  buildcondition: ^0.0.4
+  scrollable_positioned_list: ^0.2.2
+  http: ^0.13.4
+  firebase_messaging: ^11.2.6
+  flutter_local_notifications: ^9.2.0

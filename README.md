@@ -47,15 +47,25 @@ day 16 => Dialog info users 20/01/2022
 
 day 17 => Add Friend To My List Friends   21/01/2022
 
-day 18 => Messages Main And bubble Message  22/01/2022
-
-day 19 => Setup Firebase to Send Messages 23/01/2022
-
-day 20 => Emoji KeyBoard  24/01/2022
-
 //Week 4
 
-day 21 => Online Fiends List 25/01/2022
+day 18 => List Of My Friends  24/01/2022
 
-day 22 => Setup JitsiMeet For VideoConference  26/01/2022
+day 19 => Search by Qr Code 25/01/2022
+
+day 20 => Setup Firebase to Send Messages 26/01/2022
+
+day 21 => Messages Main And bubble Message 27/01/2022
+
+day 22 => List Friend Message  28/01/2022
+
+day 23 => List Friend Message  29/01/2022
+
+day 24 => Setup JitsiMeet For VideoConference  30/01/2022
+
+// Week 5
+
+day 25 => Video Call and Voice Call  and  Real Time Notification 31/01/2022
+
+day 26 => V 1/02/2022
 
