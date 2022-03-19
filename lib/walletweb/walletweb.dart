@@ -1,13 +1,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:intl/intl.dart';
 
 import 'cte_wallet.dart';
 
 
-class WalletAppMain extends StatelessWidget {
+class WalletAppMain extends StatefulWidget {
   const WalletAppMain({Key? key}) : super(key: key);
 
+  @override
+  State<WalletAppMain> createState() => _WalletAppMainState();
+}
+
+class _WalletAppMainState extends State<WalletAppMain> {
+  String date = "03/03/2022";
   @override
   Widget build(BuildContext context)
   {
@@ -88,6 +95,7 @@ class WalletAppMain extends StatelessWidget {
                         money(icon: const Icon(Icons.local_taxi,color: Colors.white,),color: const Color(0xff3629b7), title: "Taxi", subtitle: "Successfully", money: "\$-1234"),
                         money(icon: const Icon(Icons.electrical_services_rounded,color: Colors.white,),color: const Color(0xff0890fe), title: "Electrical", subtitle: "Unsuccessfully", money: "\$-1234"),
                         money(icon: const Icon(Icons.electrical_services_rounded,color: Colors.white,),color: const Color(0xff0890fe), title: "Electrical", subtitle: "Unsuccessfully", money: "\$-1234"),
+
                         const SizedBox(height: 10,),
 
                       ],
@@ -122,7 +130,6 @@ class WalletAppMain extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical:  15),
                       child: Row(
@@ -144,7 +151,107 @@ class WalletAppMain extends StatelessWidget {
                           ),
 
                         ],),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Text("Recent Activity",style: TextStyle(color: Colors.blue.shade300,fontSize: 20),),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(height:  30,width: 80,color: const Color(0xfff7f7f9),),
+                                const SizedBox(width: 10,),
+                                Container(height:  30,width: 80,color: const Color(0xfff7f7f9),),
+                                const Spacer(),
+                                GestureDetector(
+                                  onTap: ()
+                                  {
+                                    showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(1950),
+                                        lastDate: DateTime.now())
+                                        .then((value) {
+
+                                      setState(()
+                                      {
+                                        date = DateFormat.yMd().format(value!);
+                                      });
+                                    });
+                                  },
+                                  child: Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                                      child: Row(children:  [
+                                        const Icon(Icons.calendar_today, color: Color(0xffc4c6cc),size: 16,),
+                                        const Spacer(),
+                                        Text(date ,style: const TextStyle(color: Color(0xffc4c6cc),fontWeight: FontWeight.bold),)
+                                      ],),
+                                    ),
+                                    height: 35,width: 150,decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xfff7f7f9),
+                                  ),),
+                                ),
+                                const SizedBox(width: 5,),
+                                Container(
+                                  height: 35,
+                                  width: 35,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xfff7f7f9),
+                                  ),
+                                  child: const Icon(Icons.settings_outlined,color: Color(0xffc4c6cc),size: 20,),
+                                ),
+                                const SizedBox(width: 5,),
+                                Container(
+                                  height: 35,
+                                  width: 35,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xff623ce7),
+                                  ),
+                                  child: const Icon(Icons.add,color: Colors.white,size: 20,),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10,),
+                            Expanded(
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text("    Today"),
+                                    history(icon1: const Icon(Icons.transform_outlined ,), color: const Color(0xffff4268) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+                                    const SizedBox(height: 25,),
+                                    const Text("    Yesterday"),
+                                    const SizedBox(height: 10,),
+                                    history(icon1: const Icon(Icons.school,), color: const Color(0xff623ce7) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+                                    history(icon1: const Icon(Icons.electrical_services_rounded ,), color: const Color(0xff0890fe) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+                                    history(icon1: const Icon(Icons.local_taxi ,), color: const Color(0xff3629b7) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+                                    history(icon1: const Icon(Icons.electrical_services_rounded ,), color: const Color(0xffff4268) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+                                    history(icon1: const Icon(Icons.transform_outlined ,), color: const Color(0xff477e12) , title1: "title1", title2: "title2", title3: "title3", subtitle: "subtitle", money: ""),
+
+                                    const SizedBox(height: 10,),
+
+                                  ],
+                                ),
+                              ),
+                            )
+
+
+
+                          ],
+                        ),
+                      ),
                     )
+
                   ],
                 ),
               ),
@@ -318,6 +425,64 @@ Widget test({required Widget icon ,required Color color, required String title, 
 
           ],
         )
+      ],
+    ),
+  );
+}
+
+Widget history({required Widget icon1,required Color color, required String title1, required String title2,required String title3,required String subtitle, required String money}) {
+  return Padding(
+
+    padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+    child: Row(
+      children: [
+        SizedBox(
+          height: 40,
+          child: Row(
+            children: [
+              icon1,
+              const SizedBox(width: 10,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(title1,style: const TextStyle(height: 1),),
+                  Text(subtitle,style: const TextStyle(height: 1),),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Row(
+          children: [
+            Container(
+              height: 35,
+              width: 35,
+              decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(10)),
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: CircleAvatar(radius: 1,backgroundColor: Colors.white,),
+              ),
+            ),
+            const SizedBox(width: 10,),
+            Text(title2)
+          ],
+        ),
+        const Spacer(),
+        Row(
+          children: [
+            Container(
+              height: 35,
+              width: 35,
+              decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(10)),
+              child: const Icon(Icons.visibility_rounded,color: Colors.white,size: 20,)
+            ),
+            const SizedBox(width: 10,),
+            Text(title3)
+          ],
+        ),
+        const Spacer(),
       ],
     ),
   );

@@ -7,8 +7,7 @@ class AnimationMonth extends StatefulWidget {
   _AnimationMonthState createState() => _AnimationMonthState();
 }
 
-class _AnimationMonthState extends State<AnimationMonth>
-    with SingleTickerProviderStateMixin {
+class _AnimationMonthState extends State<AnimationMonth> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> titleAnimation;
   late Animation<double> priceAnimation;

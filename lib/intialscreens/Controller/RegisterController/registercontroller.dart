@@ -38,9 +38,11 @@ class RegisterController extends GetxController
     required String? phone,
     required String? password,
   })
+
   {
     auth.createUserWithEmailAndPassword(email: email!, password: password!).then((value)
     {
+
       phoneVerification(phone: phone! );
 
       uId = value.user!.uid;

@@ -164,7 +164,8 @@ class AppController extends GetxController
     });
   }
 
-   getMyInfo({required String uid}) async{
+   getMyInfo({required String uid}) async
+   {
     final  getData = await fireStore.collection('users').doc(uid).get();
     try{
       userModel = UserModel.fromJson(getData.data()!);

@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'animationMonth/listanimation.dart';
+import 'mydevkit/mydevkit.dart';
+import 'mydevkit/screens/ContactUs/contactus1.dart';
 
  void main()
  {
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget
                   fontFamily: "Cairo",
                   primarySwatch: Colors.indigo,
                 ),
-                home: WalletAppMain() , // const  ListAnimation() // const AnimationMonth(),
+                home:  ListDevKit(),// const  WalletAppMain(),//WalletAppMain ListAnimation()  // const AnimationMonth(),
 
               );
 
