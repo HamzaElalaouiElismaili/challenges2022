@@ -42,23 +42,23 @@ class Appcubit extends Cubit<Appstates> {
   Widget widget =  HomePage();
   var image  = userModel.file;
   var picker = ImagePicker();
+  File? messageimage;
   File? profileImage;
   double drawer2Padding = 20.0;
   Locale? localeApp = const Locale("fr" ,"");
   List<MessageModel> messages = [];
-  File? messageimage;
+
    //chooselangg
   String langValue = "Français";//"${getLang(context , "profilesetting")}"
   List<String> langList = ["العربية","Français","English"];
 
 
-  void settingLang(context)
-  {
+  void settingLang(context) {
     emit(LanguageChangedArabic());
 
     if(langValue =="العربية")
     {
-      languageChange( locale:Locale("ar",""));
+      languageChange(locale:Locale("ar",""));
       CashLocal.saveData(key: 'locale', value: "ar");
       CashLocal.saveData(key: 'languageSelected', value: true);
     }
@@ -110,7 +110,6 @@ class Appcubit extends Cubit<Appstates> {
 
   void getMyInfo() {
     emit(GetMyInfoLoading());
-
     FirebaseFirestore.instance
         .collection('users')
         .doc(uId)
@@ -226,7 +225,6 @@ class Appcubit extends Cubit<Appstates> {
 
   Future<void> getCoverImage() async {
     emit(CoverImagePicckedLoadingState());
-
     picker.pickImage(source: ImageSource.gallery).then((value)
     {
 
