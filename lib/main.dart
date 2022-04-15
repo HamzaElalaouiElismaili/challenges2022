@@ -1,6 +1,40 @@
-// lib/first month/main_chat_app/main_chat_app.dart
+
+
+// Pour Monsieur Mohammed HAMEID
+
+
+// Chat App
+//    =====>   lib/first month/main_chat_app/main_chat_app.dart
+//    login : hamzaelalaouielismaili@gmail.com
+//    password : 123456789
+
+
 //
-// lib/intialscreens/omrmain.dart
+// MY Tools Kit
+//  =====>  lib/mydevkit/main.dart
+
+
+// Booking App
+//    =====>   lib/second_month/main.dart
+
+
+// My initials Screens
+//   =====>    lib/intialscreens/omrmain.dart
+
+
+// Google Map with and Take Pictures and Storing on FireStorage
+//   =====>   lib/interviewapp/main.dart
+
+
+// Animation Month
+//   =====>  lib/animationMonth/main.dart
+
+
+
+// Flutter Web
+//   =====>  lib/walletweb/walletweb.dart
+
+
 
 import 'package:challenges2022/walletweb/walletweb.dart';
 import 'package:firebase_core/firebase_core.dart';

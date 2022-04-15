@@ -5,6 +5,63 @@
 - [my E-mail] =>  hamzaelalaouielismaili@gmail.com
 
 
+// Pour Monsieur Mohammed HAMEID
+
+
+in  ======= Edit configuration templates   ==> Dart entrypoint
+
+replace by path project    C:\Users\USER\challenges2022\path project
+
+Example  : C:\Users\USER\challenges2022\lib/first month/main_chat_app/main_chat_app.dart
+
+
+
+// Chat App
+//  path project  =====>   lib/first month/main_chat_app/main_chat_app.dart
+//    login : hamzaelalaouielismaili@gmail.com
+//    password : 123456789
+
+
+
+// MY Tools Kit
+
+// path project  =====>  lib/mydevkit/main.dart
+
+
+// Booking App
+
+// path project   =====>   lib/second_month/main.dart
+
+
+// My initials Screens
+
+// path project  =====>    lib/intialscreens/omrmain.dart
+
+
+// Google Map with and Take Pictures and Storing on FireStorage
+
+// path project  =====>   lib/interviewapp/main.dart
+
+
+// Animation Month
+
+// path project  =====>  lib/animationMonth/main.dart
+
+
+
+// Flutter Web
+//   =====>  lib/walletweb/walletweb.dart
+
+
+
+
+
+
+
+
+
+
+
 //Week 1
 
 day 1 => Splash Screen 04/01/2022

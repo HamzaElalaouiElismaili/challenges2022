@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset("assets/welcome_register_login/welcome.svg",height: MediaQuery.of(context).size.height/2-10,),
+                child: SvgPicture.asset("assets/omr/omrassets/welcome_register_login/welcome.svg",height: MediaQuery.of(context).size.height/2-10,),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),

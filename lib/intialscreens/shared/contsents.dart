@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
-String blogo = "assets/logo/blogo.png";
+String blogo = "assets/omr/omrassets/logo/blogo.png";
 
 var uId;
 var tokenme;
