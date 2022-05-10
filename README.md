@@ -18,7 +18,9 @@ Example  : C:\Users\USER\challenges2022\lib/first month/main_chat_app/main_chat_
 
 // Chat App
 //  path project  =====>   lib/first month/main_chat_app/main_chat_app.dart
+
 //    login : hamzaelalaouielismaili@gmail.com
+
 //    password : 123456789
 
 
