@@ -1,10 +1,4 @@
 
-- [my Linkedin](https://www.linkedin.com/in/hamza-el-alaoui-el-ismaili-85536a15a/)
-- [my Twitter](https://twitter.com/hamzaalaouielis)
-- [my Facebook](https://m.facebook.com/hamza.alawi.1671/)
-- [my E-mail] =>  hamzaelalaouielismaili@gmail.com
-
-
 // Pour Monsieur Mohammed HAMEID
 
 
@@ -56,12 +50,15 @@ Example  : C:\Users\USER\challenges2022\lib/first month/main_chat_app/main_chat_
 //   =====>  lib/walletweb/walletweb.dart
 
 
-
-
-
-
-
 // end Monsieur Mohammed HAMEID
+
+
+
+
+- [my Linkedin](https://www.linkedin.com/in/hamza-el-alaoui-el-ismaili-85536a15a/)
+- [my Twitter](https://twitter.com/hamzaalaouielis)
+- [my Facebook](https://m.facebook.com/hamza.alawi.1671/)
+- [my E-mail] =>  hamzaelalaouielismaili@gmail.com
 
 
 
