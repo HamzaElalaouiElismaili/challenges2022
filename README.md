@@ -1,5 +1,5 @@
 
-// Pour Monsieur Mohammed HAMEID
+
 
 
 in  ======= Edit configuration templates   ==> Dart entrypoint
@@ -50,7 +50,7 @@ Example  : C:\Users\USER\challenges2022\lib/first month/main_chat_app/main_chat_
 //   =====>  lib/walletweb/walletweb.dart
 
 
-// end Monsieur Mohammed HAMEID
+
 
 
 
